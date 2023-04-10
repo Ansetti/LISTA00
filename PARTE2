@@ -1,0 +1,53 @@
+#programa2
+def bubbleSort(vet2):
+    n = len(vet2)
+    
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if vet2[j] > vet2[j+1]:
+                vet2[j], vet2[j+1] = vet2[j+1], vet2[j]
+                
+                
+def bubbleSortIn(vet2):
+    n = len(vet2)
+    
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if vet2[j] < vet2[j+1]:
+                vet2[j], vet2[j+1] = vet2[j+1], vet2[j]
+def programa02():
+    import random 
+    
+    while True:
+        ordem = input('Digite C para ordem crescente e D para decrescente: ').upper()
+        if ordem == 'C' or ordem == 'D':
+            break
+        print('Digite uma entrada válida.')
+
+    while True:
+        total = int(input('Digite o número total de elementos: '))
+        if total > 0:
+            break
+        print('Digite um número maior que zero.')
+
+    start = int(input('Digite o menor valor possível: '))
+    stop = int(input('Digite o maior valor possível: '))
+
+        
+    vet2 = []
+    
+    for a in range(total):
+        elemen = random.randint(start, stop)
+        vet2.append(elemen)
+    
+    if ordem == 'D':
+        bubbleSortIn(vet2)
+    elif ordem == 'C':
+        bubbleSort(vet2)
+        
+    else:
+        print('digite C para ordem crescente e D para decrescente')
+        
+    
+    print(vet2)
+
