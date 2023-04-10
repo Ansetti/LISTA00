@@ -1,0 +1,30 @@
+#programa1
+def bubbleSort(vet1):
+    n = len(vet1)
+    
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if vet1[j] > vet1[j+1]:
+                vet1[j], vet1[j+1] = vet1[j+1], vet1[j]
+def programa01():
+    import random 
+    total = int(input())
+    start = int(input())
+    stop = int(input())
+    
+    #verificando
+    if total <= 0:
+        print('digite uma entrada válida')
+        total = int(input())
+        start = int(input())
+        stop = int(input())
+        
+
+    vet1 = []
+
+    for a in range(total):
+        elemen = random.randint(start, stop)
+        vet1.append(elemen)
+
+    bubbleSort(vet1)
+    print(vet1)
